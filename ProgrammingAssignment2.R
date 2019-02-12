@@ -23,9 +23,9 @@ Error: unexpected symbol in "makeCacheMatrix<-function(x=matrix()){ inv<-NULL se
 ## The function assumes that the matrix supplied is always invertible.
                                         
 > cacheSolve <- function(x, ...) {
-    +     inv <- x$getinverse()
-    +     if(!is.null(inv)) {
-      +         message("getting cached data")
+    +     inv <- x$getinverse()                          ## This assigns the variable 'inv'
+    +     if(!is.null(inv)) {                            ## This ensures that only non-null values are completed
+      +         message("getting cached data")           ## this supplies the message 'getting cached data'
       +         return(inv)
       +     }
     +     data <- x$get()
